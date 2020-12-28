@@ -1,0 +1,39 @@
+<%- include('header') -%>
+
+
+    <div class="box" id="heading">
+        <h1><%= kindofday %> </h1>
+    </div>
+    
+    <div class="box">
+ 
+            <% for(var i = 0 ; i< ListOfItems.length ; i++){    %>
+               <div class="item">
+                   <input type="checkbox">
+                    <p> <%= ListOfItems[i] %> </p>
+               </div>
+                
+           <% } %>
+
+          <% if("/" ===  myRoute ){    %>
+
+            <form class="item" action='/' method="post">
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                <button type="submit">+</button>
+            </form>
+
+           <% } else { %> 
+            <form class="item" action='/work' method="post">
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                <button type="submit">+</button>
+            </form>
+           <% } %>
+           
+ 
+           
+    </div>
+
+    
+
+
+<%- include('footer') -%>
